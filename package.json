@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "cdk": "cdk"
+    "deploy:dev": "cdk deploy '*' -c stage=dev",
+    "deploy:prod": "cdk deploy '*' -c stage=master"
   },
   "devDependencies": {
     "@types/node": "8.10.45",
@@ -16,7 +17,13 @@
     "aws-cdk": "^1.4.0"
   },
   "dependencies": {
+    "@aws-cdk/aws-cloudfront": "^1.4.0",
+    "@aws-cdk/aws-codebuild": "^1.4.0",
+    "@aws-cdk/aws-iam": "^1.4.0",
+    "@aws-cdk/aws-s3": "^1.4.0",
     "@aws-cdk/core": "^1.4.0",
+    "@types/fs-extra": "^8.0.0",
+    "fs-extra": "^8.1.0",
     "source-map-support": "^0.5.9"
   }
 }
